@@ -1,7 +1,7 @@
 {
   "name": "ahmad-sarrawi-react",
   "version": "0.1.0",
-  "homepage": "https://Ahmad-Sarrawi.github.io/jsd-0723",
+  "homepage": "https://jsd-0723.github.io/ahmad-sarrawi",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
