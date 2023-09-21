@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-
+import HTML from "../assets/images/html.png";
+import { AiFillStar } from 'react-icons/ai';
 const StyledAnchor = styled.a`
   box-shadow: 0px 0px 4px var(--lines-color);
   background-color: var(--bg_default);
@@ -59,9 +60,24 @@ const AuthorSpan = styled.span`
 `;
 
 const TopicCard = () => {
-    return <StyledAnchor>
-      <ImageBanner><StyledImg/></ImageBanner>
-  </StyledAnchor>
+  return (
+    <StyledAnchor>
+      <ImageBanner>
+        <StyledImg src={HTML} />
+      </ImageBanner>
+      <CardDetails>
+              <CategorySpan>Web Development</CategorySpan>
+              <TopicName>HTML</TopicName>
+              <RatingContainer>
+                  <AiFillStar/>
+                  <AiFillStar/>
+                  <AiFillStar/>
+                  <AiFillStar/>
+        </RatingContainer>
+        <AuthorSpan>Sarah Smith</AuthorSpan>
+      </CardDetails>
+    </StyledAnchor>
+  );
 };
 
 export default TopicCard;
