@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import NavButton from "../components/NavButton";
+import { RatingContainer } from "./TopicCard";
 
 const StyledHeader = styled.header``;
 

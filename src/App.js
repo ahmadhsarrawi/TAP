@@ -1,17 +1,19 @@
-import "./App.css";
-import SearchSection from "./components/SearchSection";
-import TopicCard from "./components/TopicCard";
-import CardsView from "./layout/CardsView";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from "./layout/Header";
-import MainLayout from "./layout/MainLayout";
-import NumberOfTopics from "./layout/NumberOfTopics";
 import Home from "./pages/Home";
+import Footer from "./layout/Footer";
+import TopicDetails from "./pages/TopicDetails";
 
 function App() {
   return (
-    <>
-      <Home/>
-    </>
+    <BrowserRouter>
+      <Header />
+      <Routes>
+        <Route path="/" element={<Home />}></Route>
+        <Route path="/details" element={<TopicDetails />}></Route>
+      </Routes>
+      <Footer />
+    </BrowserRouter>
   );
 }
 

@@ -1,7 +1,7 @@
 import React from "react";
 
 import styled from "styled-components";
-
+import TopicCard from "./TopicCard";
 const CardsContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -21,8 +21,12 @@ const CardsContainer = styled.div`
   }
 `;
 
-const CardsView = (props) => {
-  return <CardsContainer>{props.children}</CardsContainer>;
+const CardsView = ({data}) => {
+  return <CardsContainer>{
+    data.map(item => {
+      return <TopicCard name={item.name} id={item.id} key={item.id} category={item.category} topic={item.topic} image={item.image} />
+  })
+  }</CardsContainer>;
 };
 
 export default CardsView;

@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import SearchInput from "./SearchInput";
+import InputWithIcon from "./InputWithIcon";
 import DropDown from "./DropDown";
 
 const SearchContainer = styled.div`
@@ -45,18 +45,35 @@ const DropDownsWrapper = styled.div`
   }
 `;
 
-const sortOptions = [{ value: 'id', text: 'Default' }, { value: 'topic', text: 'Topic Title' }, { value: 'name', text: 'Author Name' }];
-const filterOptions = [{value:'Default', text:"Default"}]
+const sortOptions = ["Default", "Topic Title", "Author Name"];
+
 const SearchSection = (props) => {
   return (
     <SearchContainer>
       <StyledSearchSection>
         <SearchBarWrapper>
-          <SearchInput />
+          <InputWithIcon
+            placeHolder="Search our website..."
+            type="text"
+            searchHandler={props.searchHandler}
+          />
         </SearchBarWrapper>
-              <DropDownsWrapper>
-                  <DropDown label={'Sort by:'} for='sort' options={sortOptions} />
-                  <DropDown label={'Filter by:'} for='filter' options={filterOptions} />
+        <DropDownsWrapper>
+          <DropDown
+            changeHandler={props.sortHandler}
+            label={"Sort by:"}
+            for="sort"
+            options={sortOptions}
+            leftBorder={0}
+          />
+          <DropDown
+            label={"Filter by:"}
+            for="filter"
+            options={props.filterOptions}
+            leftBorder={1}
+            changeHandler={props.filterTopics}
+            value={"Default"}
+          />
         </DropDownsWrapper>
       </StyledSearchSection>
     </SearchContainer>

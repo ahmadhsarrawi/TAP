@@ -1,8 +1,13 @@
 import React from "react";
 import styled from "styled-components";
 import HTML from "../assets/images/html.png";
-import { AiFillStar } from 'react-icons/ai';
-const StyledAnchor = styled.a`
+import { AiFillStar } from "react-icons/ai";
+
+import { Link } from "react-router-dom";
+
+const StyledAnchor = styled(Link)`
+  color: var(--body-text);
+  text-decoration: none;
   box-shadow: 0px 0px 4px var(--lines-color);
   background-color: var(--bg_default);
   border-radius: 6px;
@@ -18,7 +23,6 @@ const ImageBanner = styled.div`
   height: 50%;
   overflow: hidden;
   background-color: white;
-  color: var(--body-text);
 `;
 const StyledImg = styled.img`
   width: 100%;
@@ -47,7 +51,7 @@ const TopicName = styled.h3`
   text-overflow: ellipsis;
   overflow: hidden;
 `;
-const RatingContainer = styled.div`
+export const RatingContainer = styled.div`
   display: flex;
   font-size: 16px;
   color: var(--stars-gold);
@@ -59,22 +63,22 @@ const AuthorSpan = styled.span`
   font-weight: 400;
 `;
 
-const TopicCard = () => {
+const TopicCard = ({ id, topic, category, image, name }) => {
   return (
-    <StyledAnchor>
+    <StyledAnchor to={`/details?id=${id}`}>
       <ImageBanner>
-        <StyledImg src={HTML} />
+        <StyledImg src={require(`../assets/images/${image}`)} />
       </ImageBanner>
       <CardDetails>
-              <CategorySpan>Web Development</CategorySpan>
-              <TopicName>HTML</TopicName>
-              <RatingContainer>
-                  <AiFillStar/>
-                  <AiFillStar/>
-                  <AiFillStar/>
-                  <AiFillStar/>
+        <CategorySpan>{category}</CategorySpan>
+        <TopicName>{topic}</TopicName>
+        <RatingContainer>
+          <AiFillStar />
+          <AiFillStar />
+          <AiFillStar />
+          <AiFillStar />
         </RatingContainer>
-        <AuthorSpan>Sarah Smith</AuthorSpan>
+        <AuthorSpan>{name}</AuthorSpan>
       </CardDetails>
     </StyledAnchor>
   );

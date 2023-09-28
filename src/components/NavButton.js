@@ -39,7 +39,7 @@ const StyledSpan = styled.span`
 const NavButton = (props) => {
   return (
       <StyledButton>
-       {props.icon == 'moon'?<BsMoon/>:props.icon =='heart'?<AiOutlineHeart/>:''}   
+       {props.icon === 'moon'?<BsMoon/>:props.icon ==='heart'?<AiOutlineHeart/>:''}   
       <StyledSpan>{props.children}</StyledSpan>
     </StyledButton>
   );

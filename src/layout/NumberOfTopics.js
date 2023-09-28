@@ -21,9 +21,9 @@ const StyledHeading1 = styled.div`
 const StyledSpan = styled.span`
 
 `
-const NumberOfTopics = () => {
+const NumberOfTopics = ({number}) => {
     return <StyledDiv>
-      <StyledHeading1><StyledSpan>"39" Web Topics Found</StyledSpan></StyledHeading1>
+      <StyledHeading1><StyledSpan>{`"${number}" Web Topics Found`}</StyledSpan></StyledHeading1>
   </StyledDiv>
 };
 

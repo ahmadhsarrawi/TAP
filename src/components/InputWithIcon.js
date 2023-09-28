@@ -12,16 +12,18 @@ const StyledInput = styled.input`
   background-color: var(--bg_default);
   color: var(--body-text);
 `;
-
-const SearchInput = () => {
+const StyledIcon = styled(AiOutlineSearch)`
+  margin-inline: 10px;
+  height: 100%;
+  font-size: 19px;
+`;
+const InputWithIcon = ({type,placeHolder,searchHandler}) => {
   return (
     <>
-      <AiOutlineSearch
-        style={{ "margin-inline": "10px", height: "100%", "font-size": "19px" }}
-      />
-      <StyledInput placeholder="Search our website..." type="text" />
+      <StyledIcon />
+      <StyledInput placeholder={placeHolder} type={type} onChange={searchHandler}/>
     </>
   );
 };
 
-export default SearchInput;
+export default InputWithIcon;

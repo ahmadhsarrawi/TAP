@@ -1,6 +1,5 @@
-import React from 'react'
-import styled from 'styled-components'
-
+import React from "react";
+import styled from "styled-components";
 
 const DropDownContainer = styled.div`
   width: 50%;
@@ -11,6 +10,8 @@ const DropDownContainer = styled.div`
   padding-left: 12px;
   padding-right: 8px;
   justify-content: center;
+  border-left: ${(props) =>
+    props.border ? "1px solid var(--lines-color)" : "none"};
 
   @media (min-width: 840px) {
     border-top: none;
@@ -30,16 +31,22 @@ const Select = styled.select`
   color: var(--body-text);
 `;
 
-
 const DropDown = (props) => {
   return (
-      <DropDownContainer>
-          <Label for={props.for}>{props.label}</Label>
-          <Select>
-              {props.options.map(item => { return <option value={item.value}>{item.text}</option>})}
-          </Select>
+    <DropDownContainer border={props.leftBorder}>
+      <Label htmlFor={props.for}>{props.label}</Label>
+      <Select onChange={props.changeHandler} >
+        
+        {props.options.map((item) => {
+          return (
+            <option value={item} key={item}>
+              {item}
+            </option>
+          );
+        })}
+      </Select>
     </DropDownContainer>
-  )
-}
+  );
+};
 
-export default DropDown
+export default DropDown;
