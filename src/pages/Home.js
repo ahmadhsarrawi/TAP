@@ -3,7 +3,6 @@ import MainLayout from "../layout/MainLayout";
 import SearchSection from "../components/SearchSection";
 import NumberOfTopics from "../layout/NumberOfTopics";
 import CardsView from "../layout/CardsView";
-import TopicCard from "../layout/TopicCard";
 import { useEffect, useState } from "react";
 import { loadTopics } from "../APIs/getAPI";
 import Loader from "../components/Loader";
