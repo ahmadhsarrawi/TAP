@@ -1,8 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { RatingContainer } from "./TopicCard";
-import { AiFillStar } from "react-icons/ai";
-import { AiOutlineStar } from "react-icons/ai";
+import RatingStars from "./RatingStars";
 
 const InfoWrapper = styled.div`
   grid-area: info;
@@ -25,7 +23,7 @@ const StyledHeading2 = styled.h2`
   }
 `;
 const StyledHeading1 = styled.h1``;
-const StyledRatingContainer = styled(RatingContainer)`
+const StyledRatingContainer = styled.div`
   @media (min-width: 1440px) {
     margin-bottom: 24px;
   }
@@ -39,11 +37,7 @@ const DetailsInfo = ({item}) => {
       <StyledHeading2>{item.category}</StyledHeading2>
       <StyledHeading1>{item.topic}</StyledHeading1>
       <StyledRatingContainer>
-        <AiFillStar />
-        <AiFillStar />
-        <AiFillStar />
-        <AiFillStar />
-        <AiOutlineStar />
+        <RatingStars rating={item.rating} />
       </StyledRatingContainer>
       <InfoParagraph>
         {item.description}

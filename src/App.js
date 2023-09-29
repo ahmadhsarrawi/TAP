@@ -6,7 +6,7 @@ import TopicDetails from "./pages/TopicDetails";
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/TAP">
       <Header />
       <Routes>
         <Route path="/" element={<Home />}></Route>

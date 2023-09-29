@@ -23,9 +23,7 @@ const Heading = styled.h3`
   font-weight: 700;
   margin-right: auto;
   font-size: 15px;
-  @media (min-width: 1120px) {
-    height: 70px;
-  }
+  
   @media (min-width: 1440px) {
     font-size: 18px;
   }
@@ -122,7 +120,7 @@ const Header = () => {
   return (
     <StyledHeader>
       <Wrapper>
-        <Heading>Web Topics</Heading>
+        <Heading >Web Topics</Heading>
         <NavButton icon="moon">Dark Mode</NavButton>
         <NavButton icon="heart">Favourites</NavButton>
       </Wrapper>

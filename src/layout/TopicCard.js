@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import HTML from "../assets/images/html.png";
 import { AiFillStar } from "react-icons/ai";
-
+import RatingStars from "./RatingStars";
 import { Link } from "react-router-dom";
 
 const StyledAnchor = styled(Link)`
@@ -63,7 +63,7 @@ const AuthorSpan = styled.span`
   font-weight: 400;
 `;
 
-const TopicCard = ({ id, topic, category, image, name }) => {
+const TopicCard = ({ id, topic, category, image, name,rating }) => {
   return (
     <StyledAnchor to={`/details?id=${id}`}>
       <ImageBanner>
@@ -72,12 +72,7 @@ const TopicCard = ({ id, topic, category, image, name }) => {
       <CardDetails>
         <CategorySpan>{category}</CategorySpan>
         <TopicName>{topic}</TopicName>
-        <RatingContainer>
-          <AiFillStar />
-          <AiFillStar />
-          <AiFillStar />
-          <AiFillStar />
-        </RatingContainer>
+        <RatingStars rating={rating} />
         <AuthorSpan>{name}</AuthorSpan>
       </CardDetails>
     </StyledAnchor>
